@@ -1,0 +1,4 @@
+- Add macroses of path 
+- Add macroses of script parameters 
+- Add enviroment support
+- Add validator of field
