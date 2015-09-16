@@ -9,7 +9,6 @@ import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessTerminatedListener;
 import com.intellij.execution.runners.ExecutionEnvironment;
-import com.intellij.execution.util.ProgramParametersUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class RunState extends CommandLineState {
@@ -23,8 +22,6 @@ public class RunState extends CommandLineState {
     @NotNull
     @Override
     public ProcessHandler startProcess() throws ExecutionException {
-        String workingDir = ProgramParametersUtil.getWorkingDir(config, getEnvironment().getProject(), config.getConfigurationModule().getModule());
-
         GeneralCommandLine cmd = new GeneralCommandLine();
         cmd.setExePath(config.getInterpreterName());
         cmd.getParametersList().addParametersString(config.getInterpreterOptions());

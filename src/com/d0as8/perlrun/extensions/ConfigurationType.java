@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 public class ConfigurationType extends ConfigurationTypeBase {
-    public ConfigurationType() {
+    private ConfigurationType() {
         super("ConfigurationType", Plugin.NAME, Plugin.DESCRIPTION, Plugin.ICON);
 
         addFactory(new ConfigurationFactory(this));
@@ -29,7 +29,7 @@ public class ConfigurationType extends ConfigurationTypeBase {
 
         @Override
         public RunConfiguration createTemplateConfiguration(Project project) {
-            return new Config("", new RunConfigurationModule(project), this);
+            return new Config(new RunConfigurationModule(project), this);
         }
     }
 }

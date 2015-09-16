@@ -6,7 +6,10 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configuration.AbstractRunConfiguration;
 import com.intellij.execution.configuration.EnvironmentVariablesComponent;
-import com.intellij.execution.configurations.*;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.RunConfiguration;
+import com.intellij.execution.configurations.RunConfigurationModule;
+import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.components.PathMacroManager;
 import com.intellij.openapi.module.Module;
@@ -27,10 +30,10 @@ public class Config extends AbstractRunConfiguration implements CommonProgramRun
     private String interpreterOptions = "";
     private String interpreterName = "";
     private String programName = "";
-    private String programParameters;
+    private String programParameters = "";
 
-    public Config(String name, RunConfigurationModule configurationModule, ConfigurationFactory factory) {
-        super(name, configurationModule, factory);
+    public Config(RunConfigurationModule configurationModule, ConfigurationFactory factory) {
+        super("", configurationModule, factory);
     }
 
     @Override
@@ -46,11 +49,6 @@ public class Config extends AbstractRunConfiguration implements CommonProgramRun
     @Nullable
     public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment env) throws ExecutionException {
         return new RunState(this, env);
-    }
-
-    @Override
-    public void checkConfiguration() throws RuntimeConfigurationException {
-        super.checkConfiguration();
     }
 
     @Override

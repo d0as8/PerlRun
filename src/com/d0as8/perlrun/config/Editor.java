@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class Editor extends SettingsEditor<Config> {
+class Editor extends SettingsEditor<Config> {
     private Form form;
 
     public Editor(Module module) {

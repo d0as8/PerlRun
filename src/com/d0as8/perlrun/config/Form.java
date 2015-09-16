@@ -9,12 +9,10 @@ import com.intellij.ui.RawCommandLineEditor;
 import javax.swing.*;
 import java.awt.*;
 
-public class Form extends CommonProgramParametersPanel {
+class Form extends CommonProgramParametersPanel {
     private LabeledComponent<RawCommandLineEditor> interpreterOptionsComponent;
-    private LabeledComponent<JComponent> interpreterNameComponent;
     private TextFieldWithBrowseButton interpreterNameField;
 
-    private LabeledComponent<JComponent> programNameComponent;
     private TextFieldWithBrowseButton programNameField;
     private LabeledComponent<RawCommandLineEditor> programParametersComponent;
 
@@ -22,7 +20,7 @@ public class Form extends CommonProgramParametersPanel {
     protected void addComponents() {
         interpreterNameField = new TextFieldWithBrowseButton();
         interpreterNameField.addBrowseFolderListener("Choose interpreter...", "", getProject(), FileChooserDescriptorFactory.createSingleLocalFileDescriptor());
-        interpreterNameComponent = LabeledComponent.create(createComponentWithMacroBrowse(interpreterNameField), "Interpreter:");
+        LabeledComponent<JComponent> interpreterNameComponent = LabeledComponent.create(createComponentWithMacroBrowse(interpreterNameField), "Interpreter:");
         interpreterNameComponent.setLabelLocation(BorderLayout.WEST);
         add(interpreterNameComponent);
 
@@ -32,7 +30,7 @@ public class Form extends CommonProgramParametersPanel {
 
         programNameField = new TextFieldWithBrowseButton();
         programNameField.addBrowseFolderListener("Choose script...", "", getProject(), FileChooserDescriptorFactory.createSingleLocalFileDescriptor());
-        programNameComponent = LabeledComponent.create(createComponentWithMacroBrowse(programNameField), "Script:");
+        LabeledComponent<JComponent> programNameComponent = LabeledComponent.create(createComponentWithMacroBrowse(programNameField), "Script:");
         programNameComponent.setLabelLocation(BorderLayout.WEST);
         add(programNameComponent);
 
