@@ -1,11 +1,9 @@
 package com.d0as8.perlrun.config;
 
 import com.intellij.execution.ui.CommonProgramParametersPanel;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
-import com.intellij.ui.MacroAwareTextBrowseFolderListener;
 import com.intellij.ui.RawCommandLineEditor;
 
 import javax.swing.*;
@@ -23,7 +21,7 @@ public class Form extends CommonProgramParametersPanel {
     @Override
     protected void addComponents() {
         interpreterNameField = new TextFieldWithBrowseButton();
-        interpreterNameField.addBrowseFolderListener("Choose interpreter...", "", getProject(),FileChooserDescriptorFactory.createSingleLocalFileDescriptor());
+        interpreterNameField.addBrowseFolderListener("Choose interpreter...", "", getProject(), FileChooserDescriptorFactory.createSingleLocalFileDescriptor());
         interpreterNameComponent = LabeledComponent.create(createComponentWithMacroBrowse(interpreterNameField), "Interpreter:");
         interpreterNameComponent.setLabelLocation(BorderLayout.WEST);
         add(interpreterNameComponent);
@@ -33,12 +31,12 @@ public class Form extends CommonProgramParametersPanel {
         add(interpreterOptionsComponent);
 
         programNameField = new TextFieldWithBrowseButton();
-        programNameField.addBrowseFolderListener("Choose script...","",getProject(),FileChooserDescriptorFactory.createSingleLocalFileDescriptor());
+        programNameField.addBrowseFolderListener("Choose script...", "", getProject(), FileChooserDescriptorFactory.createSingleLocalFileDescriptor());
         programNameComponent = LabeledComponent.create(createComponentWithMacroBrowse(programNameField), "Script:");
         programNameComponent.setLabelLocation(BorderLayout.WEST);
         add(programNameComponent);
 
-        programParametersComponent = LabeledComponent.create(new RawCommandLineEditor(),"Script parameters:");
+        programParametersComponent = LabeledComponent.create(new RawCommandLineEditor(), "Script parameters:");
         programParametersComponent.setLabelLocation(BorderLayout.WEST);
         add(programParametersComponent);
     }

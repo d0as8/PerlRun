@@ -1,38 +1,39 @@
 <idea-plugin version="2">
-  <id>com.d0as8.perlrun</id>
-  <name>PerlRun</name>
-  <version>0.1</version>
-  <vendor email="d0as8@aaanet.ru" url="https://github.com/d0as8/PerlRun">Stanislav d0as8 Ryabov + contributors</vendor>
+    <id>com.d0as8.perlrun</id>
+    <name>PerlRun</name>
+    <version>0.1</version>
+    <vendor email="d0as8@aaanet.ru" url="https://github.com/d0as8/PerlRun">Stanislav d0as8 Ryabov + contributors
+    </vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
       Simple IntelliJ IDEA plugin for running Perl scripts
     ]]></description>
 
-  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="123"/>
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="123"/>
 
-  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <extensions defaultExtensionNs="com.intellij">
-    <runConfigurationProducer implementation="com.d0as8.perlrun.extensions.RunConfigProducer"/>
-    <configurationType implementation="com.d0as8.perlrun.extensions.ConfigurationType"/>
-    <programRunner implementation="com.d0as8.perlrun.extensions.ProgramRunner"/>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <runConfigurationProducer implementation="com.d0as8.perlrun.extensions.RunConfigProducer"/>
+        <configurationType implementation="com.d0as8.perlrun.extensions.ConfigurationType"/>
+        <programRunner implementation="com.d0as8.perlrun.extensions.ProgramRunner"/>
+    </extensions>
 
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
 
-  <project-components>
-    <!-- Add your project components here -->
-  </project-components>
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
 
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
 
 </idea-plugin>

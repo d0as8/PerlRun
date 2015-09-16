@@ -88,9 +88,8 @@ public class Config extends AbstractRunConfiguration implements CommonProgramRun
         return programParameters;
     }
 
-    @Override
-    public void setWorkingDirectory(@Nullable String s) {
-
+    public void setProgramParameters(@Nullable String programParameters) {
+        this.programParameters = programParameters;
     }
 
     @Nullable
@@ -99,8 +98,9 @@ public class Config extends AbstractRunConfiguration implements CommonProgramRun
         return null;
     }
 
-    public void setProgramParameters(@Nullable String programParameters) {
-        this.programParameters = programParameters;
+    @Override
+    public void setWorkingDirectory(@Nullable String s) {
+
     }
 
     public String getProgramName() {

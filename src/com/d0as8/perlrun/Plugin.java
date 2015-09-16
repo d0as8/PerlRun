@@ -1,6 +1,7 @@
 package com.d0as8.perlrun;
 
 import com.intellij.openapi.util.IconLoader;
+
 import javax.swing.*;
 
 public final class Plugin {
